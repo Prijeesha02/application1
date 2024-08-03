@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let data={
+        name:"abc",
+        details:"details",
+        isAdmin:true,
+        /*marks:[90,80,70,20,40],
+        callback:function method(){
+            alert("from object function")
+            name="ram"
+            return name
+        }*/
+    }
+    console.log(Object.keys(data))
+    console.log(Object.values(data))
+    console.log(data)
+    //declaring array in to the js
+    let values=[10,"raja",true,{marks1:200,marks2:200,marks3:300}];
+    document.writeln(values[0])
+    document.writeln(values[1])
+    document.writeln(values[2])
+    document.writeln(Object.values(values[3]))
+   </script> 
+</body>
+</html>

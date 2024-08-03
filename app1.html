@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let studentDta={
+            name:"Apj",
+            address:"Chennai",
+            courses:"python",
+            fee:200000,
+            feeStatus:"paid"
+       
+
+        }
+
+        for(let key in studentDta){
+            document.writeln("<h1>"+key+" : "+studentDta[key]+"</h1")
+        }
+       
+        document.writeln(studentDta.name)
+        document.writeln(studentDta.address)
+        document.writeln(studentDta.courses)
+        document.writeln(studentDta.fee)
+        document.writeln(studentDta.feeStatus)
+    </script>
+</body>
+</html>

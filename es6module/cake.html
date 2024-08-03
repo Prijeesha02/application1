@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let EmployeeDetails={
+                cakevar:["black forest","white forest","redvelvet","vanilla"],
+                ingredients:['blackchocolate','white chocolate','strawberry','vanilla essence'],
+                design:['round','square','mini square','mini square'],
+                Deliveryis:['inprogress','completed','started','waiting']
+             }
+             
+          let workingStatus=true;
+        let fetchData=()=>{
+
+          return new Promise((resolve,reject)=>{
+              if(workingStatus){
+                resolve("The cake order is ready...");
+              }
+              else{
+                reject("cake delivery is closed today..");
+              }
+            })
+        }
+        fetchData().then(()=>{
+
+            setTimeout(()=>{
+                document.writeln("<h1>They are ready for delivery</h1>")
+            },2000)
+           }).then(()=>{
+            setTimeout(()=>{
+                document.writeln("<h1>the order of cake is given to the cake bakers</h1>")
+            },4000)
+            }).then(()=>{
+            setTimeout(()=>{
+                document.writeln("<h1>The bakers started to bake the cake</h1>")
+            },6000)
+        }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${EmployeeDetails.cakevar[0]} made with the ${EmployeeDetails.ingredients[0]}  baking of cake in ${EmployeeDetails.design[0]} is in ${EmployeeDetails.Deliveryis[0]}</h1>`)
+                },6000)
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${EmployeeDetails.cakevar[1]} made with the ${EmployeeDetails.ingredients[1]} baking of cake in ${EmployeeDetails.design[1]} is  ${EmployeeDetails.Deliveryis[1]}</h1>`)
+                },6000)
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln(`<h1>${EmployeeDetails.cakevar[2]} made with the ${EmployeeDetails.ingredients[2,3]}  baking of cake in ${EmployeeDetails.design[2]} is ${EmployeeDetails.Deliveryis[2]}</h1>`)
+                //},6000)
+                },6000)
+            
+            }).then(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>the cake is baked</h1>")
+                },8000)
+            }).catch(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>Today baking of white forest is closed </h1>")
+                },2000)
+            }).finally(()=>{
+                setTimeout(()=>{
+                    document.writeln("<h1>The cake shop is closed</h1>")
+                },10000)
+            })
+    </script>
+
+   </script> 
+</body>
+</html>

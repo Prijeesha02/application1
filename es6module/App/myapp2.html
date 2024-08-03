@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="elements">
+    <script>
+       // let divElement=()=>{
+       function divElement(){
+        let elements=document.getElementById("elements")
+        console.log(elements)
+        let childDiv=document.createElement("div");
+        let childPara=document.createElement("P");
+        childPara.textContent="ughfuigdnlidhryugokwepuncjnuryhiy0rf";
+        childDiv.appendChild(childPara);
+        elements.appendChild(childDiv);
+        elements.setAttribute("class","container");
+        let div=document.getElementsByClassName("container")
+        div[0].style.width="30%";
+        div[0].style.margin="2%";
+        div[0].style.padding="2%";
+        div[0].style.border="3px solid green";
+        div[0].style.borderRadius="10px";
+    }
+    let cleardata=setInterval(()=>{
+        divElement();
+    },3000)
+    setTimeout(()=>{
+        clearInterval(cleardata)
+    },20000)
+    
+
+        //div.style.background="red";
+    </script>
+    
+</body>
+</html>

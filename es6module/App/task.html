@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Create form container
+let formContainer = document.createElement('div');
+formContainer.style.width = '300px';
+formContainer.style.margin = '0 auto';
+formContainer.style.padding = '20px';
+formContainer.style.border = '1px solid #ccc';
+formContainer.style.borderRadius = '10px';
+formContainer.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+formContainer.style.backgroundColor = '#FFFAF0'; // Pastel color
+
+// Center the form vertically and horizontally
+let container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.top = '50%';
+container.style.left = '50%';
+container.style.transform = 'translate(-50%, -50%)';
+container.style.display = 'flex';
+container.style.alignItems = 'center';
+container.style.justifyContent = 'center';
+container.style.height = '100vh';
+
+container.appendChild(formContainer);
+
+// Create form
+let form = document.createElement('form');
+
+// Create and style title
+let title = document.createElement('h2');
+title.innerText = 'Register';
+title.style.textAlign = 'center';
+title.style.marginBottom = '20px';
+title.style.color = '#8A2BE2'; // Pastel color
+form.appendChild(title);
+
+// Create and style input fields
+let fields = [
+  { name: 'username', type: 'text', placeholder: 'Username' },
+  { name: 'email', type: 'email', placeholder: 'Email' },
+  { name: 'password', type: 'password', placeholder: 'Password' },
+  { name: 'confirmPassword', type: 'password', placeholder: 'Confirm Password' }
+];
+
+fields.forEach(field => {
+  let fieldContainer = document.createElement('div');
+  fieldContainer.style.position = 'relative';
+  fieldContainer.style.marginBottom = '10px';
+
+  let input = document.createElement('input');
+  input.type = field.type;
+  input.name = field.name;
+  input.placeholder = field.placeholder;
+  input.style.width = '100%';
+  input.style.padding = '10px';
+  input.style.border = '1px solid #ccc';
+  input.style.borderRadius = '5px';
+  input.style.boxSizing = 'border-box';
+  input.style.backgroundColor = '#E0FFFF'; // Pastel color
+  input.style.color = '#8A2BE2'; // Pastel color
+
+  fieldContainer.appendChild(input);
+
+  if (field.type === 'password') {
+    let eyeIcon = document.createElement('span');
+    eyeIcon.innerHTML = '&#128065;'; // Eye icon
+    eyeIcon.style.position = 'absolute';
+    eyeIcon.style.right = '10px';
+    eyeIcon.style.top = '50%';
+    eyeIcon.style.transform = 'translateY(-50%)';
+    eyeIcon.style.cursor = 'pointer';
+    eyeIcon.style.fontSize = '18px';
+    eyeIcon.style.color = '#888';
+    eyeIcon.style.transition = 'color 0.3s';
+
+    eyeIcon.addEventListener('click', () => {
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeIcon.style.color = '#000';
+      } else {
+        input.type = 'password';
+        eyeIcon.style.color = '#888';
+      }
+    });
+
+    fieldContainer.appendChild(eyeIcon);
+  }
+
+  form.appendChild(fieldContainer);
+});
+
+// Create and style submit button
+let submitButton = document.createElement('button');
+submitButton.type = 'submit';
+submitButton.innerText = 'Register';
+submitButton.style.width = '100%';
+submitButton.style.padding = '10px';
+submitButton.style.border = 'none';
+submitButton.style.borderRadius = '5px';
+submitButton.style.backgroundColor = '#ADD8E6'; // Pastel color
+submitButton.style.color = 'white';
+submitButton.style.fontSize = '16px';
+submitButton.style.cursor = 'pointer';
+submitButton.style.transition = 'background-color 0.3s';
+
+// Add hover effect to button
+submitButton.addEventListener('mouseover', () => {
+  submitButton.style.backgroundColor = '#87CEFA'; // Pastel color
+});
+submitButton.addEventListener('mouseout', () => {
+  submitButton.style.backgroundColor = '#ADD8E6'; // Pastel color
+});
+
+form.appendChild(submitButton);
+
+// Append form to form container
+formContainer.appendChild(form);
+
+// Append form container to body
+document.body.appendChild(container);
+
+// Add form submission event handler
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let username = form.elements['username'].value;
+  let email = form.elements['email'].value;
+  let password = form.elements['password'].value;
+  let confirmPassword = form.elements['confirmPassword'].value;
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
+
+  alert(`Registration successful!\nUsername: ${username}\nEmail: ${email}`);
+});
+
+    
+
+
+</script>
+
+</body>
+</html>
